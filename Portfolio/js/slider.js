@@ -1,20 +1,13 @@
 (function () {
 	const Button = document.querySelector('.carousel-control-next');
 	const caruselItem = document.querySelectorAll('.carousel-item');
+	var i = 0
 	Button.addEventListener('click', function () {
-		for (var i = 0; i < caruselItem.length; i++) {
-			caruselItem[i].classList.toggle('active');
-		};
+		i++;
+		caruselItem[i].classList.add('active');
 	});
 })()
 
 
 
 
-// for (var i = 0; i < caruselItem.length; i++) {
-// 	caruselItem[i].classList.toggle('active');
-// };
-
-// let i = 0;
-// i = i++;
-// console.log(caruselItem[i]);
