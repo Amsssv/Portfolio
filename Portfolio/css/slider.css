@@ -12,10 +12,13 @@
 }
 .carousel-item {
 	position: relative;
+	right: -100%;
+	transition: all 1s;
 }
 
 .carousel-item.active {
 	flex: 0 1 100%;
+	right: 0;
 }
 
 .carousel-item .d-block{
