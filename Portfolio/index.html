@@ -26,7 +26,7 @@
         object-fit: cover;
     }
 
-    .carousel__item{
+    .carousel__item {
         transform: translateX(-100%);
         transition: .2s transform linear;
     }
@@ -35,7 +35,7 @@
         transform: translateX(0);
     }
 
-    .carousel__item--active ~ .carousel__item{
+    .carousel__item--active ~ .carousel__item {
         transform: translateX(100%);
     }
 
@@ -124,58 +124,20 @@
 
         //select function. index is argument which comes from place where function was invoked
         const selectItem = index => {
-            //clean up all items
-            items.forEach(element => element.classList.remove(selectedCssItemClass));
-            //set active class by index
-            items[index].classList.add(selectedCssItemClass);
-
-            //clean up all pagination items
-            paginationItems.forEach(element => element.classList.remove(selectedCssPaginationItemClass));
-            //set active class to pagination item by index
-            paginationItems[index].classList.add(selectedCssPaginationItemClass);
+            const selectDOMNode = (arr, activeClass, index) =>
+                arr.forEach((elements, i) => elements.classList.toggle(activeClass, i === index));
+            selectDOMNode(items, selectedCssItemClass, index);
+            selectDOMNode(paginationItems, selectedCssPaginationItemClass, index);
         }
 
-        //function handler. invokes of pagination click. event is usual argument for handlers
-        const paginationItemClickHandler = (event) => {
-            //event contains element on which listener was triggered
-            const currentElement = event.target;
-
-            //check if pagination item is active
-            if (currentElement.classList.contains(selectedCssPaginationItemClass)) {
-                //prevent function continuing
-                return;
-            }
-
-            //finding index in pagination DOM nodes array
-            const index = paginationItems.findIndex(element => currentElement === element);
-
-            //trigger select function
-            selectItem(index);
-        }
-
-        //next button handler function
-        const nextButtonClickHandler = () => {
-            //finding index of active element
-            let index = items.findIndex(element => element.classList.contains(selectedCssItemClass));
-
-            //trigger select function with increasing index
-            selectItem(index === items.length - 1 ? 0 : index + 1);
-        };
-
-        const backButtonClickHandler = () => {
-            //finding index of active element
-            let index = items.findIndex(element => element.classList.contains(selectedCssItemClass));
-
-            //trigger select function with decreasing index
-            selectItem(index === 0 ? items.length - 1 : index - 1);
-        };
+        const nextButtonClickHandler = index => selectItem(index === items.length - 1 ? 0 : index + 1)
+        const backButtonClickHandler = index => selectItem(index === 0 ? items.length - 1 : index - 1)
+        const getCurrentIndex= ()=> items.findIndex(element => element.classList.contains(selectedCssItemClass));
 
         //Add event listeners
-        nextButton.addEventListener("click", nextButtonClickHandler);
-        prevButton.addEventListener("click", backButtonClickHandler);
-        paginationItems.forEach((element) => {
-            element.addEventListener("click", paginationItemClickHandler);
-        })
+        nextButton.addEventListener("click", () => nextButtonClickHandler(getCurrentIndex()));
+        prevButton.addEventListener("click", ()=> backButtonClickHandler(getCurrentIndex()));
+        paginationItems.forEach((element, index) => element.addEventListener("click", () => selectItem(index)));
     })()
 </script>
 </body>
