@@ -211,10 +211,36 @@
                                     </div>
                                 </article>
                             </div>
+                            <script id="city-template" type="text/x-handlebars-template">
+                            <div class="feature__article article">
+                                <article class="article__item">
+                                    <div class="article__column-photo">
+                                        <a href="#" class="article__image ibg">
+                                            <img src="./img/Feature/Rectangle 34.png" alt="article image" srcset=""
+                                                class="image">
+                                        </a>
+                                    </div>
+                                    <div class="article__column-text">
+                                        <div class="article__name">
+                                            <a href="#" class="article__title">{{name}}</a>
+                                        </div>
+                                        <div class="article__info">
+                                            <div class="article_date date">
+                                                <p class="date__post">{{year}}</p>
+                                            </div>
+                                            <div class="article__theme theme">
+                                                <p class="theme-name">{{theme}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="article__description">
+                                            <p class="article__text">{{description}}</p> 
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            </script>
+
                             <div class="introduction"></div>
-                            <!-- <script id="introduction-template" type="text/x-handlebars-template">
-                                <p>Hello, my name is {{name}}!</p>
-                            </script> -->
                             <script id="city-template" type="text/x-handlebars-template">
                                 <ul class="cities">
                                     {{#each cities}}
@@ -264,7 +290,7 @@
             </div>
         </footer>
     </div>
-    <script src="json/name.json"></script>
+    <script src="json/test.json"></script>
     <script src="js/handlebars.js"></script>
     <script src="js/script.js"></script>
 </body>
