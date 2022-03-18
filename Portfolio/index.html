@@ -7,8 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css" />
     <title>Portfolio</title>
+    <script src="./js/handlebars-v4.7.7.js"></script>
     <link rel="shortcut icon" href="./img/Header/header.png" type="image/jpf">
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800;900&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -210,6 +211,17 @@
                                     </div>
                                 </article>
                             </div>
+                            <div class="introduction"></div>
+                            <!-- <script id="introduction-template" type="text/x-handlebars-template">
+                                <p>Hello, my name is {{name}}!</p>
+                            </script> -->
+                            <script id="city-template" type="text/x-handlebars-template">
+                                <ul class="cities">
+                                    {{#each cities}}
+                                        <li class="city">{{name}}: {{population}}</li>
+                                    {{/each}}
+                                </ul>
+                            </script>
                         </div>
                     </div>
                 </div>
@@ -252,6 +264,8 @@
             </div>
         </footer>
     </div>
+    <script src="json/name.json"></script>
+    <script src="js/handlebars.js"></script>
     <script src="js/script.js"></script>
 </body>
 
