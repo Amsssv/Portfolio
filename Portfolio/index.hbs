@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=\, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+	<section class="page__feature feature">
+		<div class="feature__container container">
+			<div class="feature__block">
+				<div class="feature__header">
+					<h3 class="feature__title">
+						Featured works
+					</h3>
+				</div>
+				<div class="feature__body">
+					{{#each feature.items}}
+					<div class="feature__article article">
+						<article class="article__item">
+							<div class="article__column-photo">
+								<a href="#" class="article__image ibg">
+									<img src="{{photo}}" alt="article image" srcset="" class="image">
+								</a>
+							</div>
+							<div class="article__column-text">
+								<div class="article__name">
+									<a href="#" class="article__title">{{name}}</a>
+								</div>
+								<div class="article__info">
+									<div class="article_date date">
+										<p class="date__post">{{year}}</p>
+									</div>
+									<div class="article__theme theme">
+										<p class="theme-name">{{theme}}</p>
+									</div>
+								</div>
+								<div class="article__description">
+									<p class="article__text">{{description}}</p>
+								</div>
+							</div>
+						</article>
+					</div>
+					{{/each}}
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+
+</html>
