@@ -127,96 +127,13 @@
                             </h3>
                         </div>
                         <div class="feature__body">
+                            <script id="features" type="text/x-handlebars-template">
+                                {{#each items}}
                             <div class="feature__article article">
                                 <article class="article__item">
                                     <div class="article__column-photo">
                                         <a href="#" class="article__image ibg">
-                                            <img src="./img/Feature/Rectangle 30.png" alt="article image" srcset=""
-                                                class="image">
-                                        </a>
-                                    </div>
-                                    <div class="article__column-text">
-                                        <div class="article__name">
-                                            <a href="#" class="article__title">Designing Dashboards</a>
-                                        </div>
-                                        <div class="article__info">
-                                            <div class="article_date date">
-                                                <p class="date__post">2020</p>
-                                            </div>
-                                            <div class="article__theme theme">
-                                                <p class="theme-name">Dashboard</p>
-                                            </div>
-                                        </div>
-                                        <div class="article__description">
-                                            <p class="article__text">Amet minim mollit non deserunt ullamco est sit
-                                                aliqua dolor do amet sint. Velit officia consequat duis enim velit
-                                                mollit. Exercitation veniam consequat sunt nostrud amet.</p>
-                                        </div>
-                                    </div>
-                                </article>
-                            </div>
-                            <div class="feature__article article">
-                                <article class="article__item">
-                                    <div class="article__column-photo">
-                                        <a href="#" class="article__image ibg">
-                                            <img src="./img/Feature/Rectangle 32.png" alt="article image" srcset=""
-                                                class="image">
-                                        </a>
-                                    </div>
-                                    <div class="article__column-text">
-                                        <div class="article__name">
-                                            <a href="#" class="article__title">Vibrant Portraits of 2020</a>
-                                        </div>
-                                        <div class="article__info">
-                                            <div class="article_date date">
-                                                <p class="date__post">2018</p>
-                                            </div>
-                                            <div class="article__theme theme">
-                                                <p class="theme-name">Illustration</p>
-                                            </div>
-                                        </div>
-                                        <div class="article__description">
-                                            <p class="article__text">Amet minim mollit non deserunt ullamco est sit
-                                                aliqua dolor do amet sint. Velit officia consequat duis enim velit
-                                                mollit. Exercitation veniam consequat sunt nostrud amet.</p>
-                                        </div>
-                                    </div>
-                                </article>
-                            </div>
-                            <div class="feature__article article">
-                                <article class="article__item">
-                                    <div class="article__column-photo">
-                                        <a href="#" class="article__image ibg">
-                                            <img src="./img/Feature/Rectangle 34.png" alt="article image" srcset=""
-                                                class="image">
-                                        </a>
-                                    </div>
-                                    <div class="article__column-text">
-                                        <div class="article__name">
-                                            <a href="#" class="article__title">Illustration</a>
-                                        </div>
-                                        <div class="article__info">
-                                            <div class="article_date date">
-                                                <p class="date__post">2020</p>
-                                            </div>
-                                            <div class="article__theme theme">
-                                                <p class="theme-name">Typography</p>
-                                            </div>
-                                        </div>
-                                        <div class="article__description">
-                                            <p class="article__text">Amet minim mollit non deserunt ullamco est sit
-                                                aliqua dolor do amet sint. Velit officia consequat duis enim velit
-                                                mollit. Exercitation veniam consequat sunt nostrud amet.</p>
-                                        </div>
-                                    </div>
-                                </article>
-                            </div>
-                            <script id="city-template" type="text/x-handlebars-template">
-                            <div class="feature__article article">
-                                <article class="article__item">
-                                    <div class="article__column-photo">
-                                        <a href="#" class="article__image ibg">
-                                            <img src="./img/Feature/Rectangle 34.png" alt="article image" srcset=""
+                                            <img src="{{photo}}" alt="article image" srcset=""
                                                 class="image">
                                         </a>
                                     </div>
@@ -238,15 +155,7 @@
                                     </div>
                                 </article>
                             </div>
-                            </script>
-
-                            <div class="introduction"></div>
-                            <script id="city-template" type="text/x-handlebars-template">
-                                <ul class="cities">
-                                    {{#each cities}}
-                                        <li class="city">{{name}}: {{population}}</li>
-                                    {{/each}}
-                                </ul>
+                            {{/each}}
                             </script>
                         </div>
                     </div>
@@ -290,8 +199,7 @@
             </div>
         </footer>
     </div>
-    <script src="json/test.json"></script>
-    <script src="js/handlebars.js"></script>
+    <script src="js/feature_hbs.js"></script>
     <script src="js/script.js"></script>
 </body>
 
