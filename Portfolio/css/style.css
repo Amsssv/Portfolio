@@ -643,6 +643,29 @@ body.lock{
 	-webkit-box-orient: vertical;
 }
 
+.pagination {
+	display: flex;
+	width: 50%;
+	justify-content: space-between;
+	margin: 0 auto;
+}
+.pagination__list {
+	padding: 13px 20px;
+	border: rgb(85, 81, 81) solid 2px;
+	display: inline-block;
+	border-radius: 5px;
+}
+
+.pagination__list a{
+	line-height: 0px;
+}
+.pagination__list.pagination__list--active {
+	box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.5);
+	background-color: #cecece;
+}
+.pagination__link{
+}
+
 @media (max-width: 767px){
 	.feature__block {
 		padding: 0px 0px 115px;
