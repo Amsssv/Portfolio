@@ -123,7 +123,7 @@
                     <div class="feature__block">
                         <div class="feature__header">
                             <h3 class="feature__title">
-                               <a href="http://localhost:3000/feature">Featured works</a> 
+                                <a href="http://localhost:3000/feature">Featured works</a>
                             </h3>
                         </div>
                         <div class="feature__body">
@@ -161,10 +161,12 @@
                     </div>
                     <nav>
                         <ul class="pagination">
-                        <script id="paginations" type="text/x-handlebars-template">
+                            <script id="paginations" type="text/x-handlebars-template">
                             {{#each pages}}
                             <li class="pagination__list ">
-                                <a href="page{{page}}" class="pagination__link pagination__list--active">{{page}}</a>
+                                <button class="pagination__link pagination__list--active">
+                                    {{this}}
+                                </button>
                             </li>
                             {{/each}}
                         </script>
@@ -173,6 +175,7 @@
                 </div>
             </section>
         </main>
+
         <footer class="footer">
             <div class="footer__container container">
                 <div class="footer__body">
@@ -212,6 +215,9 @@
     </div>
     <script src="js/feature_hbs.js"></script>
     <script src="js/script.js"></script>
+    <script>
+        fetch
+    </script>
 </body>
 
 </html>

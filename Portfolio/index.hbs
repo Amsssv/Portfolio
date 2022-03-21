@@ -48,18 +48,35 @@
 					{{/each}}
 				</div>
 			</div>
-            <nav>
-                <ul class="pagination">
-                    {{#each pages}}
-                    <li class="pagination__list ">
-                        <a href="page{{page}}" class="pagination__link pagination__list--active">{{page}}</a>
-                    </li>
-                    {{/each}}
-                </ul>
-            </nav>
+			<nav>
+				<ul class="pagination">
+					{{#each pages}}
+					<li class="pagination__list ">
+						<button class="pagination__link pagination__list--active">
+							{{this}}
+						</button>
+					</li>
+					{{/each}}
+				</ul>
+			</nav>
 		</div>
 	</section>
 </body>
-<script src="js/pagination.js"></script>
+
+<script>
+	document.querySelectorAll('.pagination__link').forEach((node) => {
+		node.addEventListener("click", (event) => {
+			fetch("/page", {
+				method: "GET",
+			}).then((response) => {
+				return response.json();
+			})
+				.then((data) => {
+					console.log(data);
+				});
+		})
+	});
+
+</script>
 
 </html>

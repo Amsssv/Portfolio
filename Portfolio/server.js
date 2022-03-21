@@ -16,21 +16,25 @@ const port = 3000
 app.set('view engine', 'hbs')
 app.set('views', "../Portfolio")
 
+const pages = [];
+
 const feature = require('./json/data.json');
-const items = Object.keys(feature['items']).length;
+const items = Object.keys(feature['items']).length / 3;
+for (let page = 1; page <= items; page++) {
+	pages.push(page);
+};
 
-console.log(items/3);
 
-const itemsLimit = 3;
 
-app.get('/feature', (req, res) => {
-	res.render('index', { feature: feature })
+app.get('/', (req, res) => {
+	res.render('index', { feature: feature, pages });
+
 })
 
 //for using static
 app.use(express.static(path.resolve("../Portfolio")));
 
 //server port listner
-// app.listen(port, () => {
-// 	console.log(`Example app listening on port http://localhost:${port}`)
-// })
+app.listen(port, () => {
+	console.log(`Example app listening on port http://localhost:${port}`)
+})
