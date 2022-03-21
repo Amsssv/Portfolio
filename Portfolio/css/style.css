@@ -530,7 +530,8 @@ body.lock{
 .feature__header {
 	margin-bottom: 25px;
 }
-.feature__title {
+.feature__title a{
+	display: block;
 	font-size: 1.375em;/* 22px */
 	font-weight: 700;
 	line-height: 56px;
@@ -648,9 +649,10 @@ body.lock{
 	width: 50%;
 	justify-content: space-between;
 	margin: 0 auto;
+	padding-bottom: 20px;
 }
 .pagination__list {
-	padding: 13px 20px;
+
 	border: rgb(85, 81, 81) solid 2px;
 	display: inline-block;
 	border-radius: 5px;
@@ -664,6 +666,8 @@ body.lock{
 	background-color: #cecece;
 }
 .pagination__link{
+	display: block;
+	padding: 20px 20px;
 }
 
 @media (max-width: 767px){

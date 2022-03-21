@@ -48,27 +48,18 @@
 					{{/each}}
 				</div>
 			</div>
-			<nav>
-				<ul class="pagination">
-					<li class="pagination__list ">
-						<a href="#" class="pagination__link pagination__list--active">1</a>
-					</li>
-					<li class="pagination__list ">
-						<a href="#" class="pagination__link">2</a>
-					</li>
-					<li class="pagination__list">
-						<a href="#" class="pagination__link">3</a>
-					</li>
-					<li class="pagination__list">
-						<a href="#" class="pagination__link">4</a>
-					</li>
-					<li class="pagination__list">
-						<a href="#" class="pagination__link">5</a>
-					</li>
-				</ul>
-			</nav>
+            <nav>
+                <ul class="pagination">
+                    {{#each pages}}
+                    <li class="pagination__list ">
+                        <a href="page{{page}}" class="pagination__link pagination__list--active">{{page}}</a>
+                    </li>
+                    {{/each}}
+                </ul>
+            </nav>
 		</div>
 	</section>
 </body>
+<script src="js/pagination.js"></script>
 
 </html>

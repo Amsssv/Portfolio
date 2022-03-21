@@ -17,16 +17,20 @@ app.set('view engine', 'hbs')
 app.set('views', "../Portfolio")
 
 const feature = require('./json/data.json');
+const items = Object.keys(feature['items']).length;
 
-app.get('/', (req, res) => {
+console.log(items/3);
+
+const itemsLimit = 3;
+
+app.get('/feature', (req, res) => {
 	res.render('index', { feature: feature })
 })
-
 
 //for using static
 app.use(express.static(path.resolve("../Portfolio")));
 
 //server port listner
-app.listen(port, () => {
-	console.log(`Example app listening on port ${port}`)
-})
+// app.listen(port, () => {
+// 	console.log(`Example app listening on port http://localhost:${port}`)
+// })
