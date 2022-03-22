@@ -1,5 +1,5 @@
 (function () {
-	const buttons = Array.from(document.querySelectorAll('.pagination__list'));
+	const buttons = Array.from(document.querySelectorAll('.pagination__link'));
 	const buttonActive = 'pagination__list--active';
 
 	const selectItem = index => {
@@ -20,5 +20,5 @@
 
 	buttons.forEach((element) => {
 		element.addEventListener("click", paginationItemClickHandler);
-	})
+	});
 })()

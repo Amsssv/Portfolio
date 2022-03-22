@@ -24,12 +24,10 @@ for (let page = 1; page <= items; page++) {
 	pages.push(page);
 };
 
-
-
 app.get('/', (req, res) => {
-	res.render('index', { feature: feature, pages });
+	res.render('index', { feature: feature, pages});
 
-})
+});
 
 //for using static
 app.use(express.static(path.resolve("../Portfolio")));
@@ -37,4 +35,7 @@ app.use(express.static(path.resolve("../Portfolio")));
 //server port listner
 app.listen(port, () => {
 	console.log(`Example app listening on port http://localhost:${port}`)
-})
+});
+
+
+ 
