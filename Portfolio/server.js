@@ -24,12 +24,15 @@ for (let page = 1; page <= items; page++) {
 	pages.push(page);
 };
 
+const articklesPerPage = feature['items'].slice(0, 3);
+
 app.get('/', (req, res) => {
 	res.render('index', { feature: feature, pages});
-
 });
 
+
 //for using static
+
 app.use(express.static(path.resolve("../Portfolio")));
 
 //server port listner

@@ -64,19 +64,22 @@
 </body>
 
 <script>
-	document.querySelectorAll('.pagination__link').forEach((node) => {
+		document.querySelectorAll('.pagination__link').forEach((node) => {
 		node.addEventListener("click", (event) => {
 			fetch("/page", {
-				method: "GET",
+				method: "get",
+				headers: {
+					'Content-Type': 'application/json',
+					'Accept': 'application/json'
+				}
 			}).then((response) => {
 				return response.json();
-			})
-				.then((data) => {
-					console.log(data);
-				});
+			
+			}).then((data) => {
+				console.log(data);
+			});
 		})
 	});
-
 </script>
 <script src="js/pagination.js"></script>
 </html>
