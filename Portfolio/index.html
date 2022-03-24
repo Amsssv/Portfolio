@@ -7,8 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css" />
     <title>Portfolio</title>
+    <script src="./js/handlebars-v4.7.7.js"></script>
     <link rel="shortcut icon" href="./img/Header/header.png" type="image/jpf">
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800;900&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -122,96 +123,55 @@
                     <div class="feature__block">
                         <div class="feature__header">
                             <h3 class="feature__title">
-                                Featured works
+                                <a href="http://localhost:3000/feature">Featured works</a>
                             </h3>
                         </div>
                         <div class="feature__body">
+                            <script id="features" type="text/x-handlebars-template">
+                                {{#each items}}
                             <div class="feature__article article">
                                 <article class="article__item">
                                     <div class="article__column-photo">
                                         <a href="#" class="article__image ibg">
-                                            <img src="./img/Feature/Rectangle 30.png" alt="article image" srcset=""
+                                            <img src="{{photo}}" alt="article image" srcset=""
                                                 class="image">
                                         </a>
                                     </div>
                                     <div class="article__column-text">
                                         <div class="article__name">
-                                            <a href="#" class="article__title">Designing Dashboards</a>
+                                            <a href="#" class="article__title">{{name}}</a>
                                         </div>
                                         <div class="article__info">
                                             <div class="article_date date">
-                                                <p class="date__post">2020</p>
+                                                <p class="date__post">{{year}}</p>
                                             </div>
                                             <div class="article__theme theme">
-                                                <p class="theme-name">Dashboard</p>
+                                                <p class="theme-name">{{theme}}</p>
                                             </div>
                                         </div>
                                         <div class="article__description">
-                                            <p class="article__text">Amet minim mollit non deserunt ullamco est sit
-                                                aliqua dolor do amet sint. Velit officia consequat duis enim velit
-                                                mollit. Exercitation veniam consequat sunt nostrud amet.</p>
+                                            <p class="article__text">{{description}}</p> 
                                         </div>
                                     </div>
                                 </article>
                             </div>
-                            <div class="feature__article article">
-                                <article class="article__item">
-                                    <div class="article__column-photo">
-                                        <a href="#" class="article__image ibg">
-                                            <img src="./img/Feature/Rectangle 32.png" alt="article image" srcset=""
-                                                class="image">
-                                        </a>
-                                    </div>
-                                    <div class="article__column-text">
-                                        <div class="article__name">
-                                            <a href="#" class="article__title">Vibrant Portraits of 2020</a>
-                                        </div>
-                                        <div class="article__info">
-                                            <div class="article_date date">
-                                                <p class="date__post">2018</p>
-                                            </div>
-                                            <div class="article__theme theme">
-                                                <p class="theme-name">Illustration</p>
-                                            </div>
-                                        </div>
-                                        <div class="article__description">
-                                            <p class="article__text">Amet minim mollit non deserunt ullamco est sit
-                                                aliqua dolor do amet sint. Velit officia consequat duis enim velit
-                                                mollit. Exercitation veniam consequat sunt nostrud amet.</p>
-                                        </div>
-                                    </div>
-                                </article>
-                            </div>
-                            <div class="feature__article article">
-                                <article class="article__item">
-                                    <div class="article__column-photo">
-                                        <a href="#" class="article__image ibg">
-                                            <img src="./img/Feature/Rectangle 34.png" alt="article image" srcset=""
-                                                class="image">
-                                        </a>
-                                    </div>
-                                    <div class="article__column-text">
-                                        <div class="article__name">
-                                            <a href="#" class="article__title">Illustration</a>
-                                        </div>
-                                        <div class="article__info">
-                                            <div class="article_date date">
-                                                <p class="date__post">2020</p>
-                                            </div>
-                                            <div class="article__theme theme">
-                                                <p class="theme-name">Typography</p>
-                                            </div>
-                                        </div>
-                                        <div class="article__description">
-                                            <p class="article__text">Amet minim mollit non deserunt ullamco est sit
-                                                aliqua dolor do amet sint. Velit officia consequat duis enim velit
-                                                mollit. Exercitation veniam consequat sunt nostrud amet.</p>
-                                        </div>
-                                    </div>
-                                </article>
-                            </div>
+                            {{/each}}
+                            </script>
                         </div>
                     </div>
+                    <nav>
+                        <ul class="pagination">
+                            <script id="paginations" type="text/x-handlebars-template">
+                            {{#each pages}}
+                            <li class="pagination__list">
+                                <button class="pagination__link">
+                                    {{this}}
+                                </button>
+                            </li>
+                            {{/each}}
+                            </script>
+                        </ul>
+                    </nav>
                 </div>
             </section>
         </main>
@@ -252,6 +212,7 @@
             </div>
         </footer>
     </div>
+    <script src="js/feature_hbs.js"></script>
     <script src="js/script.js"></script>
 </body>
 

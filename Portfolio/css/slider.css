@@ -1,0 +1,56 @@
+.carousel {
+	max-width: 1000px;
+	margin: 0 auto;
+}
+.slide {
+	position: relative;
+}
+.carousel-inner {
+	display: flex;
+	max-width: 800px;
+	margin: 0 auto;
+}
+.carousel-item {
+	position: relative;
+	right: -100%;
+	transition: all 1s;
+}
+
+.carousel-item.active {
+	flex: 0 1 100%;
+	right: 0;
+}
+
+.carousel-item .d-block{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	object-fit: cover;
+}
+
+.ibg {
+	position: relative;
+	padding: 0 0 50% 0; 
+}
+.d-block {
+}
+.w-100 {
+}
+.carousel-control-prev {
+	position: absolute;
+	top: 50%;
+	left: 0;
+}
+.carousel-control-prev-icon {
+}
+.sr-only {
+}
+.carousel-control-next {
+	position: absolute;
+	top: 50%;
+	right: 0;
+}
+.carousel-control-next-icon {
+}
