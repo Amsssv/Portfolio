@@ -27,9 +27,12 @@ for (let page = 1; page <= items; page++) {
 const articklesPerPage = feature['items'].slice(0, 3);
 
 app.get('/', (req, res) => {
-	res.render('index', { feature: feature, pages});
+	res.render('index', { feature: feature, pages });
 });
 
+app.get('/list', (req, res) => {
+	res.send([pages, articklesPerPage]);
+});
 
 //for using static
 
@@ -41,4 +44,3 @@ app.listen(port, () => {
 });
 
 
- 

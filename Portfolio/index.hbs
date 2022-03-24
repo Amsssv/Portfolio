@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=\, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
 	<link rel="stylesheet" href="./css/style.css">
 </head>
@@ -64,22 +64,46 @@
 </body>
 
 <script>
-		document.querySelectorAll('.pagination__link').forEach((node) => {
+	const url = "/list";
+	const myInit = {
+		method: "get",
+		referrer: "http://localhost:3000/list",
+		headers: {
+			'Content-Type': 'application/json',
+			'Accept': 'application/json',
+		},
+	}
+
+	function DOM() {
+		const nav = document.createElement("nav");
+		nav.classList.add("pagination");
+		document.body.appendChild(nav);
+	};
+
+	document.querySelectorAll('.pagination__link').forEach((node) => {
 		node.addEventListener("click", (event) => {
-			fetch("/page", {
-				method: "get",
-				headers: {
-					'Content-Type': 'application/json',
-					'Accept': 'application/json'
+			fetch(url, myInit).then((response) => {
+				if (response.ok) {
+					return response.json();
+				} else {
+					let error = new Error(res.statusText);
+					error.response = response;
+					throw error
 				}
-			}).then((response) => {
-				return response.json();
-			
 			}).then((data) => {
+				document.documentElement.innerHTML = "";
+				DOM();
+
+
 				console.log(data);
+				var baseUrl = window.location.protocol + "//" + window.location.host + window.location.pathname;
+				var newUrl = baseUrl + '?list';
+				console.log(newUrl);
+				history.pushState(null, null, newUrl);
 			});
 		})
 	});
 </script>
 <script src="js/pagination.js"></script>
+
 </html>
