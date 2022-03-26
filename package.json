@@ -1,0 +1,23 @@
+{
+  "name": "server-andrei",
+  "version": "1.0.0",
+  "description": "This is the first site",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Amsssv/Portfolio.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Amsssv/Portfolio/issues"
+  },
+  "homepage": "https://github.com/Amsssv/Portfolio#readme",
+  "dependencies": {
+    "express": "^4.17.3",
+    "hbs": "^4.2.0"
+  }
+}
