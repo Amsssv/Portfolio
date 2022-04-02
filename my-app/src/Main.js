@@ -2,7 +2,8 @@ import React, { Component, useState, useEffect } from "react";
 import Post from "./components/post";
 import Hello from "./components/hello";
 import FeatureList from "./components/featureList";
-import axios from "axios";
+import PostService from "./API/PostService";
+
 
 const Main = () => {
     const [posts, setPost] = useState([
@@ -20,16 +21,30 @@ const Main = () => {
             theme: "Dashboard",
             description: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.Velit officia consequat duis enim velit mollit.Exercitation veniam consequat sunt nostrud amet."
         },
+        {
+            photo: "./images/Rectangle 30.png",
+            name: "Designing Dashboards",
+            year: "2020",
+            theme: "Dashboard",
+            description: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.Velit officia consequat duis enim velit mollit.Exercitation veniam consequat sunt nostrud amet."
+        },
+        {
+            photo: "./images/Rectangle 30.png",
+            name: "Designing Dashboards",
+            year: "2020",
+            theme: "Dashboard",
+            description: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.Velit officia consequat duis enim velit mollit.Exercitation veniam consequat sunt nostrud amet."
+        },
     ])
 
-    useEffect(() => {
-        fetchPosts()
-    }, [])
+    // useEffect(() => {
+    //     fetchPosts()
+    // }, [])
 
-    async function fetchPosts() {
-        const responce = await axios.get('http://localhost:3000/list')
-        setPost(responce.data)
-    }
+    // async function fetchPosts() {
+    //     const posts = await PostService.getAll();
+    //     setPost(posts)
+    // }
 
     return (
         <main className="page">

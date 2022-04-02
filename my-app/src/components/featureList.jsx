@@ -1,5 +1,6 @@
 import React from "react";
 import Feature from "./feature";
+import Pagination from "./pagination";
 
 const featureList = ({ posts }) => {
 
@@ -14,10 +15,11 @@ const featureList = ({ posts }) => {
 					</div>
 					<div className="feature__body">
 						{posts.map(post =>
-							<Feature post={post} key={post.id} />
+							<Feature post={post} key={Date.now()} />
 						)}
 					</div>
 				</div>
+				<Pagination key={Date.now()} />
 			</div>
 		</section>
 	)
