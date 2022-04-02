@@ -16,11 +16,11 @@ class Hello extends Component {
                                     veniam consequat sunt nostrud amet.</p>
                             </div>
                             <div className="resume__button">
-                                <a href="./resume/resume.pdf" download className="resume__link">Download Resume</a>
+                                <a href="#" download className="resume__link">Download Resume</a>
                             </div>
                         </div>
                         <div className="hello__image">
-                            <img src="images/Hello/photo_2022-02-18_23-00-00.jpg" alt="user photo" className="image" />
+                            <img src="../../images/Hello/photo_2022-02-18_23-00-00.jpg" alt="user photo" className="image" />
                         </div>
                     </div>
                 </div>

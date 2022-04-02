@@ -10,26 +10,26 @@ class Footer extends Component {
                             <ul className="social__list">
                                 <li className="social__item">
                                     <a href="#" className="social__link">
-                                        <img src="images/Footer/fb.svg" alt="facebook link"
-                                            className="social__image" />
+                                        <img src="../images/Footer/fb.svg" alt="facebook link"
+                                             className="social__image" />
                                     </a>
                                 </li>
                                 <li className="social__item">
                                     <a href="#" className="social__link">
-                                        <img src="images/Footer/insta.svg" alt="instagram link"
-                                            className="social__image" />
+                                        <img src="../images/Footer/insta.svg" alt="instagram link"
+                                             className="social__image" />
                                     </a>
                                 </li>
                                 <li className="social__item">
                                     <a href="#" className="social__link">
-                                        <img src="images/Footer/Group.svg" alt="twitter link"
-                                            className="social__image" />
+                                        <img src="../images/Footer/Group.svg" alt="twitter link"
+                                             className="social__image" />
                                     </a>
                                 </li>
                                 <li className="social__item">
                                     <a href="#" className="social__link">
-                                        <img src="images/Footer/Linkedin.svg" alt="Linkedin link"
-                                            className="social__image" />
+                                        <img src="../images/Footer/Linkedin.svg" alt="Linkedin link"
+                                             className="social__image" />
                                     </a>
                                 </li>
                             </ul>
